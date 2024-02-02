@@ -1,6 +1,7 @@
 public class Bai7 {
     public static void main(String[] args) {
-        for (int i=1 ; i < 21 ; i++)
+      int n=21;
+        for (int i=1 ; i < n ; i++)
         System.out.println(i);
     }
     
