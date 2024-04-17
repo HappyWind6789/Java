@@ -1,23 +1,26 @@
 package lab3slide79;
 
+import java.util.Scanner;
 
 public class EmployeeFullTime extends Employee {
-    private static String Position;
+    private String Position;
     @Override
-    public void KindOf(){
-        System.out.println("Employee FullTime");
+    protected String KindOf(){
+        return "Employee FullTime" ;
     }
-    public void SetPosition(String Position){
-       this.Position = Position;
+    public void Enterdata(){
+        super.Enterdata();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Your Position = ");
+        Position = sc.nextLine();
     }
-    public static String GetPosition(){
+    public void Display(){
+        super.Display();
         System.out.println("Your Position = " + Position);
-        return Position;
     }
     @Override
-    public void SetSalary(){
-        
-        switch (this.Position) {
+    public void Salary(){
+        switch (Position) {
             case "Sep":
                 this.Salary = 20000000f; 
                 break;
@@ -27,8 +30,16 @@ public class EmployeeFullTime extends Employee {
                 break;
         }
     }
-    public void SetSalary(int OverTimeDay){
-        this.Salary = this.Salary + 800000 * OverTimeDay;
+    public void Salary(int OverTimeDay){
+        switch (Position) {
+            case "Sep":
+                this.Salary = 20000000f + 800000 * OverTimeDay; 
+                break;
+        
+            default:
+                this.Salary = 10000000f + 800000 * OverTimeDay;
+                break;
+        }
     }
 
 

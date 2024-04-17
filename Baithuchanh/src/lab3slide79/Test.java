@@ -1,17 +1,24 @@
 package lab3slide79;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         EmployeeFullTime employeeFullTime = new EmployeeFullTime();
+        EmployeeFullTime employeeFullTime2 = new EmployeeFullTime();
         employeeFullTime.KindOf();
-        employeeFullTime.SetEmployeeID("NV01");
-        employeeFullTime.GetEmployyeeID();
-        employeeFullTime.SetFullName("Dang Quang Mung");
-        employeeFullTime.GetFullName();
-        employeeFullTime.SetPosition("Sep");
-        employeeFullTime.GetPosition();
-        employeeFullTime.SetSalary();
-        employeeFullTime.SetSalary(2);
+        employeeFullTime.Enterdata();
+        employeeFullTime.Salary();
+        employeeFullTime.Display();
+        employeeFullTime2.KindOf();
+        employeeFullTime2.Enterdata();
+        employeeFullTime2.Salary(2);
+        employeeFullTime2.Display();
+        EmployeePartTime employeePartTime = new EmployeePartTime();
+        employeePartTime.Enterdata();
+        employeePartTime.KindOf();
+        employeePartTime.Enterdata();
+        employeePartTime.Salary();
+        employeePartTime.Display();
+        
 
     }
     
