@@ -5,20 +5,20 @@ import java.util.Scanner;
 public class Employee {
     protected String EmployeeID;
     protected String FullName;
-    protected static Float Salary;
+    protected Long Salary;
     public Employee(){
         EmployeeID = "";
         FullName = "";
     }
     public static final long Income = 100000;
-    protected String KindOf(){
-        return "";
+    protected void KindOf(){
+        System.out.println("");
     }
     public void Enterdata(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Your EmployeeID = ");
+        System.out.print("Your EmployeeID = ");
         EmployeeID = sc.nextLine();
-        System.out.println("Your FullName = ");
+        System.out.print("Your FullName = ");
         FullName = sc.nextLine();
     }
     public void Display(){
@@ -27,7 +27,7 @@ public class Employee {
         System.out.println("Your Salary = " + Salary);
     }   
     public void Salary(){
-        Salary = 0f;
+        Salary = 0l;
     }
 }
 

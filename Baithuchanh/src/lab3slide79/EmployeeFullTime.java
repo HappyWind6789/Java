@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class EmployeeFullTime extends Employee {
     private String Position;
     @Override
-    protected String KindOf(){
-        return "Employee FullTime" ;
+    protected void KindOf(){
+        System.out.println( "Employee FullTime"); 
     }
     public void Enterdata(){
         super.Enterdata();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Your Position = ");
+        System.out.print("Your Position = ");
         Position = sc.nextLine();
     }
     public void Display(){
@@ -22,22 +22,22 @@ public class EmployeeFullTime extends Employee {
     public void Salary(){
         switch (Position) {
             case "Sep":
-                this.Salary = 20000000f; 
+                this.Salary = 20000000l; 
                 break;
         
             default:
-                this.Salary = 10000000f;
+                this.Salary = 10000000l;
                 break;
         }
     }
     public void Salary(int OverTimeDay){
         switch (Position) {
             case "Sep":
-                this.Salary = 20000000f + 800000 * OverTimeDay; 
+                this.Salary = 20000000l + 800000 * OverTimeDay; 
                 break;
         
             default:
-                this.Salary = 10000000f + 800000 * OverTimeDay;
+                this.Salary = 10000000l + 800000 * OverTimeDay;
                 break;
         }
     }

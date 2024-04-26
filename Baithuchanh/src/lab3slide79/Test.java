@@ -13,7 +13,6 @@ public class Test {
         employeeFullTime2.Salary(2);
         employeeFullTime2.Display();
         EmployeePartTime employeePartTime = new EmployeePartTime();
-        employeePartTime.Enterdata();
         employeePartTime.KindOf();
         employeePartTime.Enterdata();
         employeePartTime.Salary();
