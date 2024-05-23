@@ -3,42 +3,43 @@ package lab4slide3.Sets;
 import java.util.HashSet;
 import java.util.Scanner;
 
-import lab4slide3.Student;
+import lab4slide3.student2;
 
 public class HashSetDemo {
     public static void main(String[] args) {
-        HashSet<Student> hashSetsStudents = new HashSet<>();
-        System.out.print("Nhap so luong can luu tru : ");
+     HashSet<student2> hashSetsStudent2s = new HashSet<>();
+     student2 std = new student2();
+     while (true) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        for (int i = 0 ; i < n ; i++){
-            Student std = new Student();
-            std.EnterData();
-            if (!hashSetsStudents.contains(std)){
-                hashSetsStudents.add(std);
-                System.out.println("Them thanh cong");;
-            } else {
-                System.out.println(" Student " + std + " da ton tai");
-            }
+        System.out.println("1 Them thong tin");
+        System.out.println("2 Sua thong tin");
+        System.out.println("3 Xoa thong tin");
+        System.out.println("4 Hien thi thong tin");
+        System.out.println("5 Cancel");
+        System.out.print("Answer:");
+        int Answer = sc.nextInt();
+        switch (Answer) {
+            case 1:
+                std.AddInforHashSet(hashSetsStudent2s);
+                break;
+            case 2:
+                std.EditInforHashSet(hashSetsStudent2s);
+                break;
+            case 3:
+                std.DeleteInforHashSet(hashSetsStudent2s);
+                break;
+            case 4:
+                for(student2 std2 : hashSetsStudent2s){
+                std2.Display();
+                }
+                break;
+            default:
+                System.out.println("Cancel");
+                break;
+        } 
+        if (Answer > 4) {
+            break;
         }
-        for (Student studentdisplay : hashSetsStudents){
-            studentdisplay.AddInfor();
-            studentdisplay.Display();
-            studentdisplay.EditInfor();
-        }
-        Student std2 = new Student();
-        std2.EnterData();
-        for(int i = 0 ; i < hashSetsStudents.size() ; i++){
-            if (hashSetsStudents.contains(std2)) {
-                hashSetsStudents.remove(std2);
-                System.out.println("Remove succes");
-            }
-            else {
-                System.out.println("Not Found To Remove");
-            }
-        }
-        for (Student studentdisplay2 : hashSetsStudents){
-            studentdisplay2.Display();
-        }
+    }
     }
 }
