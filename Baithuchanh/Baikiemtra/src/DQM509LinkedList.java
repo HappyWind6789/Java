@@ -1,5 +1,7 @@
+import java.util.LinkedList;
+import java.util.Scanner;
 
-    public class DQM509LinkedList implements DQM509Interface {
+public class DQM509LinkedList implements DQM509Interface {
         public String FullName;
         public String StudentID;
         public int Age;
@@ -17,7 +19,7 @@
             Scanner sc = new Scanner(System.in);
             int n = sc.nextInt();
             for (int i = 0 ; i < n ; i++){
-                DQM509Interface2 std = new DQM509Interface2();
+                DQM509LinkedList std = new DQM509LinkedList();
                 std.NhapThongTin();
                 linkedList.add(std);
                 System.out.println("Them thanh cong");
@@ -30,9 +32,11 @@
             for(int i = 0 ; i < linkedList.size() ; i++){
                 if (linkedList.get(i).StudentID.equals(Id)) {
                     System.out.println("Nhap FullName moi : ");
-                    FullName = sc.next();
+                    String FullName = sc.next();
                     System.out.println("Nhap Age moi : ");
-                    Age = sc.nextInt();
+                    int Age = sc.nextInt();
+                    linkedList.get(i).FullName = FullName;
+                    linkedList.get(i).Age = Age;
                 }
             }
         }
@@ -52,6 +56,26 @@
                 System.out.println("FullName : " + linkedList.get(i).FullName);
                 System.out.println("Age : " + linkedList.get(i).Age);
             }
+        }
+        @Override
+        public void ThemThongTin() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'ThemThongTin'");
+        }
+        @Override
+        public void SuaThongTin() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'SuaThongTin'");
+        }
+        @Override
+        public void XoaThongTin() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'XoaThongTin'");
+        }
+        @Override
+        public Void HienThi() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'HienThi'");
         }
 }
 
